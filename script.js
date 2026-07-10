@@ -128,9 +128,12 @@ function loadReviews() {
 
     let htmlContent = "<h2>Customer Reviews</h2>";
     PRODUCT.reviews.forEach(item => {
+        // rating এর নাম্বার অনুযায়ী ডায়নামিক স্টার তৈরি
+        const stars = "⭐".repeat(item.rating); 
+        
         htmlContent += `
         <div class="review-box">
-            ⭐⭐⭐⭐⭐
+            ${stars}
             <p>${item.text}</p>
             <strong>${item.name}</strong>
         </div>`;

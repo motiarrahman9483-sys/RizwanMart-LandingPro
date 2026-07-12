@@ -3,14 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ওয়েবসাইটের নাম (যা ব্রাউজারের ট্যাবে দেখাবে) -->
     <title>Rizwan Mart | Premium Shopping</title>
     <meta name="description" content="Order premium quality products with Cash On Delivery all over Bangladesh.">
     
+    <!-- ফেভিকন বা ছোট লোগো (ব্রাউজারের ট্যাবে নামের পাশে যে ছবি থাকে)। 'favicon.png' এর জায়গায় আপনার লোগোর লিংক দিবেন -->
+    <link rel="icon" href="assets/images/favicon.png" type="image/png">
+
     <link rel="stylesheet" href="style.css">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- থাম্বনেইল ও বড় ছবির জন্য এক্সট্রা ডিজাইন (CSS) -->
+    <style>
+        /* বড় ছবির ডিজাইন (আরও আকর্ষণীয় করার জন্য) */
+        .main-image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            transition: 0.3s ease-in-out;
+        }
+
+        /* ছোট ছবি বা থাম্বনেইলের গ্যালারি */
+        .thumbnail-container {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+
+        /* ছোট ছবিগুলোর সাইজ ও ডিজাইন */
+        .thumb {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 2px solid #ddd;
+            transition: 0.3s;
+        }
+
+        /* ছোট ছবিতে ক্লিক করলে বা হোভার করলে যেমন দেখাবে */
+        .thumb:hover, .thumb.active {
+            border: 2px solid #ff4757; /* লাল রঙের বর্ডার, চাইলে পরিবর্তন করতে পারেন */
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 
 <body>
@@ -18,40 +60,59 @@
     <header class="top-bar">
         <div class="container">
             <div class="logo">
+                <!-- লোগো বসানোর জায়গা। ছবি ব্যবহার করতে চাইলে নিচের কমেন্ট করা <img> ট্যাগটি চালু করে লিংক বসাবেন। -->
+                <!-- <img src="assets/images/logo.png" alt="Rizwan Mart Logo" style="height: 45px;"> -->
                 <h2>Rizwan Mart</h2>
             </div>
             <div class="top-right">
-                <span>🚚 Cash On Delivery</span>
+                <!-- হেডারের ডানপাশের আকর্ষণীয় লেখা -->
+                <span>🚚 সারা দেশে ক্যাশ অন ডেলিভারি!</span>
             </div>
         </div>
     </header>
 
     <section class="hero">
         <div class="container hero-grid">
+            
+            <!-- বাম পাশ: প্রোডাক্টের নাম, দাম ও অফার -->
             <div class="hero-left">
-                <span class="offer">🔥 LIMITED TIME OFFER</span>
+                <!-- আকর্ষণীয় অফার টেক্সট -->
+                <span class="offer">🔥 লিমিটেড টাইম অফার - স্টক ফুরিয়ে যাওয়ার আগেই অর্ডার করুন!</span>
+                
                 <h1 id="productName">Loading...</h1>
                 <p id="productShort">Please wait, loading product details.</p>
+                
                 <div class="price-box">
                     <h2>৳ <span id="price">...</span></h2>
                     <del>৳ <span id="oldPrice">...</span></del>
                     <span class="discount">38% OFF</span> 
                 </div>
+                
                 <button class="buy-btn">অর্ডার করুন</button>
             </div>
+            
+            <!-- ডান পাশ: প্রোডাক্টের ছবি ও থাম্বনেইল -->
             <div class="hero-right">
-                <img id="mainImage" src="" alt="Premium Product" loading="lazy">
+                <!-- বড় ছবির ডিসপ্লে -->
+                <div class="main-image-container">
+                    <!-- ডিফল্টভাবে প্রথম ছবিটি এখানে থাকবে -->
+                    <img id="mainImage" src="assets/images/product1.jpg" alt="Premium Product" loading="lazy">
+                </div>
+
+                <!-- ছোট ছবিগুলো (থাম্বনেইল)। এগুলোতে ক্লিক করলে বড় ডিসপ্লেতে ছবি চেঞ্জ হবে -->
+                <!-- এখানে আপনার ছবির লিংকগুলো (product1, 2, 3...) বসিয়ে দেবেন -->
+                <div class="thumbnail-container">
+                    <img src="assets/images/product1.jpg" class="thumb active" onclick="changeImage(this.src, this)" alt="Thumb 1">
+                    <img src="assets/images/product2.jpg" class="thumb" onclick="changeImage(this.src, this)" alt="Thumb 2">
+                    <img src="assets/images/product3.jpg" class="thumb" onclick="changeImage(this.src, this)" alt="Thumb 3">
+                    <img src="assets/images/product4.jpg" class="thumb" onclick="changeImage(this.src, this)" alt="Thumb 4">
+                </div>
             </div>
+
         </div>
     </section>
 
-    <section class="gallery">
-        <div class="container">
-            <h2>Product Gallery</h2>
-            <div class="gallery-grid"></div>
-        </div>
-    </section>
-
+    <!-- নিচের সেকশনগুলো আপনার আগের মতোই আছে -->
     <section class="features">
         <div class="container">
             <h2>Why Choose This Product?</h2>
@@ -67,32 +128,25 @@
     </section>
 
     <section class="reviews">
-        <div class="container">
-            </div>
+        <div class="container"></div>
     </section>
 
     <section class="faq">
-        <div class="container">
-            </div>
+        <div class="container"></div>
     </section>
 
     <section id="order">
         <div class="container">
             <h2>Order Now</h2>
             <form id="orderForm">
-                
                 <input type="text" name="name" placeholder="আপনার নাম" required>
-                
                 <input type="tel" name="phone" placeholder="মোবাইল নাম্বার" required>
-                
                 <textarea name="address" placeholder="সম্পূর্ণ ঠিকানা" required></textarea>
-                
                 <select name="quantity">
                     <option value="১ পিস">১ পিস</option>
                     <option value="২ পিস">২ পিস</option>
                     <option value="৩ পিস">৩ পিস</option>
                 </select>
-                
                 <button type="submit">অর্ডার কনফার্ম করুন</button>
             </form>
         </div>
@@ -100,12 +154,29 @@
 
     <footer>
         <div class="container">
-            <p>© 2026 Rizwan Mart</p>
+            <!-- ফুটারে কপিরাইট টেক্সট -->
+            <p>© 2026 Rizwan Mart | All Rights Reserved</p>
         </div>
     </footer>
 
+    <!-- আপনার জাভাস্ক্রিপ্ট ফাইলগুলো -->
     <script src="config.js"></script>
     <script src="script.js"></script>
+
+    <!-- ছোট ছবিতে ক্লিক করলে বড় ছবি চেঞ্জ হওয়ার স্ক্রিপ্ট (অটো-স্লাইডার বন্ধ করা হয়েছে) -->
+    <script>
+        function changeImage(imageSrc, clickedElement) {
+            // বড় ছবির সোর্স চেঞ্জ করা
+            document.getElementById('mainImage').src = imageSrc;
+
+            // সব থাম্বনেইল থেকে 'active' ক্লাস (লাল বর্ডার) সরিয়ে দেওয়া
+            let thumbs = document.querySelectorAll('.thumb');
+            thumbs.forEach(thumb => thumb.classList.remove('active'));
+
+            // যে ছবিতে ক্লিক করা হয়েছে, সেটিতে 'active' ক্লাস যুক্ত করা
+            clickedElement.classList.add('active');
+        }
+    </script>
 
 </body>
 </html>

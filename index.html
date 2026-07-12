@@ -6,14 +6,18 @@
     <title>Rizwan Mart - Premium Store</title>
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        /* ==========================================================
+           🎨🎨 থিমের কালার চেঞ্জ করার অপশন (এখান থেকে রং বদলাবেন) 🎨🎨
+           ========================================================== */
         :root {
-            --primary: #1E3A8A; /* গাঢ় নীল */
-            --secondary: #EA580C; /* উজ্জ্বল কমলা */
-            --bg-color: #F3F4F6;
+            --primary: #1E3A8A; /* গাঢ় নীল (হেডার এবং মূল লেখার কালার) */
+            --secondary: #EA580C; /* উজ্জ্বল কমলা (বাটন এবং অফারের কালার) */
+            --bg-color: #F3F4F6; /* ব্যাকগ্রাউন্ড কালার */
             --text-dark: #1F2937;
             --white: #FFFFFF;
-            --accent-green: #16A34A; /* অফার ও টিকচিহ্নের জন্য */
+            --accent-green: #16A34A; /* টিকচিহ্ন ও ডিসকাউন্ট প্রাইসের কালার */
         }
+
         body {
             font-family: 'Hind Siliguri', sans-serif;
             margin: 0;
@@ -24,7 +28,14 @@
         }
         h1, h2, h3 { margin-top: 0; line-height: 1.4; }
         a { text-decoration: none; }
-        img { width: 100%; height: auto; border-radius: 8px; margin-bottom: 15px; }
+        
+        /* ইমেজ গ্লোবাল স্টাইল */
+        img.product-img { 
+            width: 100%; 
+            height: auto; 
+            border-radius: 8px; 
+            margin-bottom: 15px; 
+        }
         
         .rm-container {
             max-width: 700px;
@@ -34,21 +45,35 @@
             overflow: hidden;
         }
 
+        /* ==========================================================
+           🏵️🏵️ লোগো এবং হেডার সেকশনের স্টাইল 🏵️🏵️
+           ========================================================== */
         .rm-header {
             background: var(--primary);
             color: var(--white);
-            text-align: center;
-            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px 15px;
+            border-bottom: 5px solid var(--secondary);
+        }
+        .rm-logo {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%; /* লোগো গোল করার কোড */
+            border: 3px solid var(--secondary); /* লোগোর বর্ডার */
+            object-fit: cover;
+            box-shadow: 0 0 10px rgba(255,255,255,0.5);
+        }
+        .rm-header-text {
             font-size: 28px;
             font-weight: 700;
-            border-bottom: 5px solid var(--secondary);
         }
 
         .rm-section { padding: 20px; text-align: center; }
-        
         .rm-headline { font-size: 26px; color: var(--primary); font-weight: 700; margin-bottom: 20px; }
         
-        /* প্রাইসিং ও অফার */
         .rm-offer-box {
             background: #FFF7ED;
             border: 2px dashed var(--secondary);
@@ -59,7 +84,6 @@
         .rm-regular-price { text-decoration: line-through; color: #EF4444; font-size: 20px; font-weight: 600; }
         .rm-discount-price { font-size: 32px; font-weight: 700; color: var(--accent-green); margin: 10px 0; }
 
-        /* এনিমেটেড বাটন */
         .rm-action-btn {
             display: inline-block;
             background: var(--secondary);
@@ -82,22 +106,14 @@
             100% { box-shadow: 0 0 0 0 rgba(234, 88, 12, 0); }
         }
 
-        /* ভিডিও সেকশন */
         .rm-video-wrapper { padding: 10px; border: 3px solid #E5E7EB; border-radius: 12px; margin: 20px 0; }
         .rm-video-wrapper video { width: 100%; border-radius: 8px; outline: none; }
 
-        /* কালারফুল টিকচিহ্ন লিস্ট (আপনার কাঙ্ক্ষিত ডিজাইন) */
-        .rm-colorful-list {
-            text-align: left;
-            margin: 20px 0;
-        }
-        .rm-colorful-list ul {
-            list-style: none;
-            padding: 0;
-        }
+        .rm-colorful-list { text-align: left; margin: 20px 0; }
+        .rm-colorful-list ul { list-style: none; padding: 0; }
         .rm-colorful-list li {
-            background: #EFF6FF; /* হালকা নীল ব্যাকগ্রাউন্ড */
-            border-left: 5px solid var(--primary); /* বাম পাশে বর্ডার */
+            background: #EFF6FF;
+            border-left: 5px solid var(--primary);
             margin: 12px 0;
             padding: 15px;
             border-radius: 6px;
@@ -106,90 +122,50 @@
             font-size: 18px;
             font-weight: 600;
             color: #1E40AF;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
         .rm-check-icon {
             background: var(--accent-green);
             color: var(--white);
             border-radius: 50%;
-            width: 26px;
-            height: 26px;
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            margin-right: 15px;
-            font-size: 16px;
-            flex-shrink: 0;
-            margin-top: 2px;
+            width: 26px; height: 26px;
+            display: inline-flex; justify-content: center; align-items: center;
+            margin-right: 15px; font-size: 16px; flex-shrink: 0; margin-top: 2px;
         }
 
-        /* ছবি ও লেখার মিশ্রণ (বিস্তারিত সেকশন) */
         .rm-detail-block {
-            background: #F9FAFB;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #E5E7EB;
+            background: #F9FAFB; padding: 20px; border-radius: 10px; margin-bottom: 20px; border: 1px solid #E5E7EB;
         }
         .rm-detail-block h3 { color: var(--secondary); font-size: 22px; }
 
-        /* FAQ */
-        .rm-faq details {
-            background: #F3F4F6;
-            margin-bottom: 12px;
-            border-radius: 8px;
-            text-align: left;
-        }
-        .rm-faq summary {
-            font-weight: 600;
-            font-size: 18px;
-            padding: 15px;
-            cursor: pointer;
-            background: #E5E7EB;
-            outline: none;
-            border-radius: 8px;
-        }
+        .rm-faq details { background: #F3F4F6; margin-bottom: 12px; border-radius: 8px; text-align: left; }
+        .rm-faq summary { font-weight: 600; font-size: 18px; padding: 15px; cursor: pointer; background: #E5E7EB; border-radius: 8px; outline: none; }
         .rm-faq p { padding: 15px; margin: 0; font-size: 16px; color: #4B5563; }
 
-        /* অর্ডার ফর্ম */
-        .rm-form-area {
-            background: #FFF7ED;
-            padding: 30px 20px;
-            border-top: 5px solid var(--secondary);
-        }
-        .rm-input {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 15px;
-            border: 1px solid #D1D5DB;
-            border-radius: 8px;
-            font-family: inherit;
-            font-size: 16px;
-            box-sizing: border-box;
-        }
-        .rm-footer {
-            background: var(--text-dark);
-            color: var(--white);
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
-        }
+        .rm-form-area { background: #FFF7ED; padding: 30px 20px; border-top: 5px solid var(--secondary); }
+        .rm-input { width: 100%; padding: 15px; margin-bottom: 15px; border: 1px solid #D1D5DB; border-radius: 8px; font-family: inherit; font-size: 16px; box-sizing: border-box; }
+        .rm-footer { background: var(--text-dark); color: var(--white); text-align: center; padding: 20px; font-size: 14px; }
     </style>
 </head>
 <body>
 
 <div class="rm-container">
     
-    <!-- হেডার -->
+    <!-- ==========================================================
+         🏵️🏵️ ব্র্যান্ড লোগো সেকশন (এখানে লোগোর লিংক দিন) 🏵️🏵️
+         ========================================================== -->
     <div class="rm-header">
-        🛍️ Rizwan Mart
+        <img src="https://via.placeholder.com/150x150?text=Logo" alt="Rizwan Mart Logo" class="rm-logo">
+        <span class="rm-header-text">Rizwan Mart</span>
     </div>
 
     <!-- হিরো সেকশন -->
     <div class="rm-section">
         <h1 class="rm-headline">আপনার দৈনন্দিন কাজকে আরও সহজ ও স্মার্ট করতে নিয়ে এলাম প্রিমিয়াম এই গ্যাজেটটি!</h1>
         
-        <img src="https://via.placeholder.com/800x800?text=Product+Main+Image+1" alt="প্রোডাক্ট ১">
+        <!-- ==========================================================
+             🖼️🖼️ ইমেজ সেকশন ১ (প্রধান ছবির লিংক এখানে বসাবেন) 🖼️🖼️
+             ========================================================== -->
+        <img src="https://via.placeholder.com/800x800?text=Product+Main+Image+1" alt="প্রোডাক্ট ১" class="product-img">
         
         <div class="rm-offer-box">
             <h2 style="color: var(--secondary);">🔥 আজকের স্পেশাল অফার! 🔥</h2>
@@ -201,17 +177,24 @@
         <a href="#order-section" class="rm-action-btn">অর্ডার করতে চাই</a>
     </div>
 
-    <!-- বিস্তারিত ইমেজ ব্লক ১ -->
+    <!-- বিস্তারিত সেকশন ১ -->
     <div class="rm-section">
         <h2 class="rm-headline">কেন এই প্রোডাক্টটি আপনার জন্য সেরা?</h2>
-        <img src="https://via.placeholder.com/800x800?text=Product+Detail+Image+2" alt="প্রোডাক্ট ২">
+        
+        <!-- ==========================================================
+             🖼️🖼️ ইমেজ সেকশন ২ (দ্বিতীয় ছবির লিংক এখানে বসাবেন) 🖼️🖼️
+             ========================================================== -->
+        <img src="https://via.placeholder.com/800x800?text=Product+Detail+Image+2" alt="প্রোডাক্ট ২" class="product-img">
+        
         <div class="rm-detail-block">
             <h3>১০০% প্রিমিয়াম কোয়ালিটি</h3>
             <p>অত্যন্ত নিখুঁত ফিনিশিং এবং উন্নত ম্যাটেরিয়াল দিয়ে তৈরি, যা দীর্ঘদিন ব্যবহারেও নতুনের মতোই থাকবে। আপনার বাজেটের মধ্যে সেরা একটি আইটেম।</p>
         </div>
     </div>
 
-    <!-- ভিডিও সেকশন -->
+    <!-- ==========================================================
+         🎥🎥 ভিডিও সেকশন (আপনার প্রমোশনাল ভিডিওর লিংক এখানে দিন) 🎥🎥
+         ========================================================== -->
     <div class="rm-section">
         <h2 class="rm-headline">বিস্তারিত জানতে ভিডিওটি দেখুন</h2>
         <div class="rm-video-wrapper">
@@ -222,10 +205,9 @@
         <a href="#order-section" class="rm-action-btn">অর্ডার করতে চাই</a>
     </div>
 
-    <!-- কালারফুল লিস্ট সেকশন (আপনার চাওয়া অনুযায়ী) -->
+    <!-- কালারফুল লিস্ট সেকশন -->
     <div class="rm-section">
         <h2 class="rm-headline">প্রোডাক্টটির স্পেশাল কিছু বৈশিষ্ট্য:</h2>
-        
         <div class="rm-colorful-list">
             <ul>
                 <li><span class="rm-check-icon">✓</span> এটি ওজনে হালকা কিন্তু অত্যন্ত মজবুত ডিজাইনের।</li>
@@ -237,10 +219,15 @@
         </div>
     </div>
 
-    <!-- বিস্তারিত ইমেজ ব্লক ২ -->
+    <!-- বিস্তারিত সেকশন ২ -->
     <div class="rm-section">
         <h2 class="rm-headline">অরিজিনাল এবং টেকসই ম্যাটেরিয়াল</h2>
-        <img src="https://via.placeholder.com/800x800?text=Product+Detail+Image+3" alt="প্রোডাক্ট ৩">
+        
+        <!-- ==========================================================
+             🖼️🖼️ ইমেজ সেকশন ৩ (তৃতীয় ছবির লিংক এখানে বসাবেন) 🖼️🖼️
+             ========================================================== -->
+        <img src="https://via.placeholder.com/800x800?text=Product+Detail+Image+3" alt="প্রোডাক্ট ৩" class="product-img">
+        
         <div class="rm-colorful-list">
             <ul>
                 <li><span class="rm-check-icon">✓</span> সারা বাংলাদেশে ক্যাশ অন ডেলিভারি সুবিধা।</li>
@@ -253,7 +240,6 @@
     <!-- FAQ সেকশন -->
     <div class="rm-section rm-faq">
         <h2 class="rm-headline">সচরাচর জিজ্ঞাসিত প্রশ্ন</h2>
-        
         <details>
             <summary>প্রোডাক্টের কোয়ালিটি কেমন হবে?</summary>
             <p>আমরা সব সময় ১০০% অরিজিনাল এবং প্রিমিয়াম কোয়ালিটির প্রোডাক্ট ডেলিভারি দিয়ে থাকি। ছবির সাথে বাস্তবের হুবহু মিল পাবেন।</p>

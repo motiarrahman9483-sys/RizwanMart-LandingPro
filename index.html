@@ -6,13 +6,13 @@
     <title>Rizwan Mart - Premium Store</title>
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* কালার প্যালেট ও বেসিক ডিজাইন */
         :root {
-            --primary: #4F46E5; /* নেভি ব্লু/ইন্ডিগো - ট্রাস্টের জন্য */
-            --secondary: #F97316; /* কমলা - অ্যাকশনের জন্য */
+            --primary: #1E3A8A; /* গাঢ় নীল */
+            --secondary: #EA580C; /* উজ্জ্বল কমলা */
             --bg-color: #F3F4F6;
             --text-dark: #1F2937;
             --white: #FFFFFF;
+            --accent-green: #16A34A; /* অফার ও টিকচিহ্নের জন্য */
         }
         body {
             font-family: 'Hind Siliguri', sans-serif;
@@ -20,158 +20,159 @@
             padding: 0;
             background-color: var(--bg-color);
             color: var(--text-dark);
+            line-height: 1.6;
         }
-        h1, h2, h3 { margin-top: 0; }
+        h1, h2, h3 { margin-top: 0; line-height: 1.4; }
         a { text-decoration: none; }
+        img { width: 100%; height: auto; border-radius: 8px; margin-bottom: 15px; }
         
-        /* রেসপন্সিভ কন্টেইনার (মূল পেজের মতই মোবাইলে সুন্দর দেখাবে) */
         .rm-container {
             max-width: 700px;
             margin: 0 auto;
             background: var(--white);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
         }
 
-        /* হেডার */
         .rm-header {
             background: var(--primary);
             color: var(--white);
             text-align: center;
             padding: 15px;
-            font-size: 26px;
+            font-size: 28px;
             font-weight: 700;
             border-bottom: 5px solid var(--secondary);
         }
 
-        /* হিরো সেকশন */
-        .rm-hero {
-            padding: 20px;
-            text-align: center;
-        }
-        .rm-hero img {
-            width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        .rm-headline {
-            font-size: 24px;
-            font-weight: 700;
-            margin: 20px 0;
-            color: var(--primary);
-            line-height: 1.4;
-        }
-
-        /* প্রাইসিং ও অফার (মূল পেজের মত) */
+        .rm-section { padding: 20px; text-align: center; }
+        
+        .rm-headline { font-size: 26px; color: var(--primary); font-weight: 700; margin-bottom: 20px; }
+        
+        /* প্রাইসিং ও অফার */
         .rm-offer-box {
             background: #FFF7ED;
             border: 2px dashed var(--secondary);
-            padding: 15px;
+            padding: 20px;
             border-radius: 10px;
             margin: 20px 0;
         }
-        .rm-regular-price { text-decoration: line-through; color: #EF4444; font-size: 18px; }
-        .rm-discount-price { font-size: 28px; font-weight: 700; color: #16A34A; }
+        .rm-regular-price { text-decoration: line-through; color: #EF4444; font-size: 20px; font-weight: 600; }
+        .rm-discount-price { font-size: 32px; font-weight: 700; color: var(--accent-green); margin: 10px 0; }
 
         /* এনিমেটেড বাটন */
         .rm-action-btn {
             display: inline-block;
             background: var(--secondary);
             color: var(--white);
-            padding: 15px 35px;
+            padding: 16px 40px;
             font-size: 22px;
             font-weight: 700;
             border-radius: 50px;
             border: none;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(249, 115, 22, 0.4);
-            animation: buttonPulse 2s infinite;
+            box-shadow: 0 4px 15px rgba(234, 88, 12, 0.4);
+            animation: pulse-animation 2s infinite;
+            width: 80%;
+            max-width: 300px;
+            margin: 10px auto;
         }
-        @keyframes buttonPulse {
-            0% { box-shadow: 0 0 0 0 rgba(249,115,22, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(249,115,22, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(249,115,22, 0); }
+        @keyframes pulse-animation {
+            0% { box-shadow: 0 0 0 0 rgba(234, 88, 12, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(234, 88, 12, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(234, 88, 12, 0); }
         }
 
         /* ভিডিও সেকশন */
-        .rm-video {
-            padding: 20px;
-            text-align: center;
+        .rm-video-wrapper { padding: 10px; border: 3px solid #E5E7EB; border-radius: 12px; margin: 20px 0; }
+        .rm-video-wrapper video { width: 100%; border-radius: 8px; outline: none; }
+
+        /* কালারফুল টিকচিহ্ন লিস্ট (আপনার কাঙ্ক্ষিত ডিজাইন) */
+        .rm-colorful-list {
+            text-align: left;
+            margin: 20px 0;
         }
-        .rm-video video {
-            width: 100%;
-            border-radius: 10px;
-            border: 3px solid #E5E7EB;
+        .rm-colorful-list ul {
+            list-style: none;
+            padding: 0;
+        }
+        .rm-colorful-list li {
+            background: #EFF6FF; /* হালকা নীল ব্যাকগ্রাউন্ড */
+            border-left: 5px solid var(--primary); /* বাম পাশে বর্ডার */
+            margin: 12px 0;
+            padding: 15px;
+            border-radius: 6px;
+            display: flex;
+            align-items: flex-start;
+            font-size: 18px;
+            font-weight: 600;
+            color: #1E40AF;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .rm-check-icon {
+            background: var(--accent-green);
+            color: var(--white);
+            border-radius: 50%;
+            width: 26px;
+            height: 26px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            font-size: 16px;
+            flex-shrink: 0;
+            margin-top: 2px;
         }
 
-        /* ফিচার পয়েন্ট / গ্রিড */
-        .rm-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            padding: 20px;
-        }
-        .rm-card {
+        /* ছবি ও লেখার মিশ্রণ (বিস্তারিত সেকশন) */
+        .rm-detail-block {
             background: #F9FAFB;
-            padding: 15px;
-            border-radius: 8px;
-            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
             border: 1px solid #E5E7EB;
         }
+        .rm-detail-block h3 { color: var(--secondary); font-size: 22px; }
 
-        /* বুলেট পয়েন্ট লিস্ট */
-        .rm-list {
-            padding: 25px 20px;
-            background: var(--primary);
-            color: var(--white);
-        }
-        .rm-list ul { list-style: none; padding: 0; }
-        .rm-list li { 
-            margin: 12px 0; 
-            font-size: 18px; 
-            display: flex; 
-            align-items: center; 
-        }
-        .rm-list li::before { content: '✔️'; margin-right: 10px; font-size: 20px; }
-
-        /* FAQ (মূল পেজের ড্রপডাউন সিস্টেম) */
-        .rm-faq-section { padding: 20px; }
-        .rm-faq-section details {
+        /* FAQ */
+        .rm-faq details {
             background: #F3F4F6;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            overflow: hidden;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            text-align: left;
         }
-        .rm-faq-section summary {
+        .rm-faq summary {
             font-weight: 600;
+            font-size: 18px;
             padding: 15px;
             cursor: pointer;
             background: #E5E7EB;
             outline: none;
+            border-radius: 8px;
         }
-        .rm-faq-section p { padding: 15px; margin: 0; }
+        .rm-faq p { padding: 15px; margin: 0; font-size: 16px; color: #4B5563; }
 
-        /* চেকআউট ফর্ম */
-        .rm-checkout-area {
-            padding: 30px 20px;
+        /* অর্ডার ফর্ম */
+        .rm-form-area {
             background: #FFF7ED;
-            text-align: center;
+            padding: 30px 20px;
+            border-top: 5px solid var(--secondary);
         }
-        .rm-input-field {
-            width: 90%;
+        .rm-input {
+            width: 100%;
             padding: 15px;
-            margin: 10px 0;
+            margin-bottom: 15px;
             border: 1px solid #D1D5DB;
             border-radius: 8px;
             font-family: inherit;
             font-size: 16px;
+            box-sizing: border-box;
         }
-
-        /* ফুটার */
         .rm-footer {
-            text-align: center;
-            padding: 20px;
             background: var(--text-dark);
             color: var(--white);
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
         }
     </style>
 </head>
@@ -185,75 +186,77 @@
     </div>
 
     <!-- হিরো সেকশন -->
-    <div class="rm-hero">
-        <h1 class="rm-headline">আপনার দৈনন্দিন জীবনকে আরও সহজ ও স্মার্ট করতে নিয়ে এলাম প্রিমিয়াম কালেকশন!</h1>
+    <div class="rm-section">
+        <h1 class="rm-headline">আপনার দৈনন্দিন কাজকে আরও সহজ ও স্মার্ট করতে নিয়ে এলাম প্রিমিয়াম এই গ্যাজেটটি!</h1>
         
-        <!-- এখানে আপনার প্রোডাক্টের ছবি বসাবেন -->
-        <img src="https://via.placeholder.com/600x600?text=Your+Product+Image" alt="Product Name">
+        <img src="https://via.placeholder.com/800x800?text=Product+Main+Image+1" alt="প্রোডাক্ট ১">
         
         <div class="rm-offer-box">
-            <h2 style="color: #EA580C;">🔥 আজকের স্পেশাল অফার! 🔥</h2>
+            <h2 style="color: var(--secondary);">🔥 আজকের স্পেশাল অফার! 🔥</h2>
             <p class="rm-regular-price">রেগুলার প্রাইস: ৩০০০৳</p>
             <p class="rm-discount-price">আজকের অফার: ১১৯৯৳</p>
-            <p style="font-weight: 600; margin-top: 5px;">⏰ স্টক সীমিত, দ্রুত অর্ডার করুন</p>
+            <p style="font-weight: 700; color: #DC2626;">⏰ মাত্র ৫০ পিস স্টক বাকি</p>
         </div>
 
-        <a href="#order-form" class="rm-action-btn">🛒 অর্ডার করতে চাই</a>
+        <a href="#order-section" class="rm-action-btn">অর্ডার করতে চাই</a>
+    </div>
+
+    <!-- বিস্তারিত ইমেজ ব্লক ১ -->
+    <div class="rm-section">
+        <h2 class="rm-headline">কেন এই প্রোডাক্টটি আপনার জন্য সেরা?</h2>
+        <img src="https://via.placeholder.com/800x800?text=Product+Detail+Image+2" alt="প্রোডাক্ট ২">
+        <div class="rm-detail-block">
+            <h3>১০০% প্রিমিয়াম কোয়ালিটি</h3>
+            <p>অত্যন্ত নিখুঁত ফিনিশিং এবং উন্নত ম্যাটেরিয়াল দিয়ে তৈরি, যা দীর্ঘদিন ব্যবহারেও নতুনের মতোই থাকবে। আপনার বাজেটের মধ্যে সেরা একটি আইটেম।</p>
+        </div>
     </div>
 
     <!-- ভিডিও সেকশন -->
-    <div class="rm-video">
-        <h2 style="color: var(--primary);">বিস্তারিত জানতে ভিডিওটি দেখুন</h2>
-        <video controls>
-            <!-- এখানে আপনার ভিডিও লিংকটি বসাবেন -->
-            <source src="your-video-link.mp4" type="video/mp4">
-        </video>
+    <div class="rm-section">
+        <h2 class="rm-headline">বিস্তারিত জানতে ভিডিওটি দেখুন</h2>
+        <div class="rm-video-wrapper">
+            <video controls>
+                <source src="your-video-link.mp4" type="video/mp4">
+            </video>
+        </div>
+        <a href="#order-section" class="rm-action-btn">অর্ডার করতে চাই</a>
     </div>
 
-    <!-- ফিচার গ্রিড -->
-    <div class="rm-hero">
-        <h2>প্রোডাক্টটি কেন স্পেশাল?</h2>
-    </div>
-    <div class="rm-grid">
-        <div class="rm-card">
-            <h3>💯 কোয়ালিটি</h3>
-            <p>১০০% প্রিমিয়াম ও অরিজিনাল</p>
-        </div>
-        <div class="rm-card">
-            <h3>🛡️ টেকসই</h3>
-            <p>লং লাস্টিং এবং অত্যন্ত মজবুত</p>
-        </div>
-        <div class="rm-card">
-            <h3>✨ ডিজাইন</h3>
-            <p>আকর্ষণীয় ও স্মার্ট ডিজাইন</p>
-        </div>
-        <div class="rm-card">
-            <h3>🚚 পোর্টেবল</h3>
-            <p>যে কোনো জায়গায় সহজে বহনযোগ্য</p>
+    <!-- কালারফুল লিস্ট সেকশন (আপনার চাওয়া অনুযায়ী) -->
+    <div class="rm-section">
+        <h2 class="rm-headline">প্রোডাক্টটির স্পেশাল কিছু বৈশিষ্ট্য:</h2>
+        
+        <div class="rm-colorful-list">
+            <ul>
+                <li><span class="rm-check-icon">✓</span> এটি ওজনে হালকা কিন্তু অত্যন্ত মজবুত ডিজাইনের।</li>
+                <li><span class="rm-check-icon">✓</span> পরিবারের সবার জন্য খুব সহজেই ব্যবহারযোগ্য।</li>
+                <li><span class="rm-check-icon">✓</span> ইকো-ফ্রেন্ডলি ম্যাটেরিয়াল, তাই কোনো স্বাস্থ্যঝুঁকি নেই।</li>
+                <li><span class="rm-check-icon">✓</span> যেকোনো জায়গায় সহজে বহন করা যায় (পোর্টেবল)।</li>
+                <li><span class="rm-check-icon">✓</span> আকর্ষণীয় লুক যা আপনার স্টাইলকে আরও বাড়িয়ে তুলবে।</li>
+            </ul>
         </div>
     </div>
 
-    <!-- বুলেট পয়েন্ট সুবিধা -->
-    <div class="rm-list">
-        <h2>আমাদের থেকে কেন কিনবেন?</h2>
-        <ul>
-            <li>সারা বাংলাদেশে ক্যাশ অন ডেলিভারি (Cash on Delivery)</li>
-            <li>প্রোডাক্ট হাতে পেয়ে চেক করে পেমেন্ট করার সুযোগ</li>
-            <li>দ্রুততম সময়ে হোম ডেলিভারি সার্ভিস</li>
-            <li>যেকোনো সমস্যায় রিপ্লেসমেন্ট গ্যারান্টি</li>
-        </ul>
-        <div style="text-align: center; margin-top: 25px;">
-            <a href="#order-form" class="rm-action-btn" style="background: var(--white); color: var(--primary);">🛒 এখনই কিনুন</a>
+    <!-- বিস্তারিত ইমেজ ব্লক ২ -->
+    <div class="rm-section">
+        <h2 class="rm-headline">অরিজিনাল এবং টেকসই ম্যাটেরিয়াল</h2>
+        <img src="https://via.placeholder.com/800x800?text=Product+Detail+Image+3" alt="প্রোডাক্ট ৩">
+        <div class="rm-colorful-list">
+            <ul>
+                <li><span class="rm-check-icon">✓</span> সারা বাংলাদেশে ক্যাশ অন ডেলিভারি সুবিধা।</li>
+                <li><span class="rm-check-icon">✓</span> প্রোডাক্ট হাতে পেয়ে চেক করে পেমেন্ট করার সুযোগ।</li>
+            </ul>
         </div>
+        <a href="#order-section" class="rm-action-btn">অর্ডার করতে চাই</a>
     </div>
 
-    <!-- সচরাচর জিজ্ঞাসিত প্রশ্ন (FAQ) -->
-    <div class="rm-faq-section">
-        <h2 style="text-align: center; color: var(--primary); margin-bottom: 20px;">সচরাচর জিজ্ঞাসিত প্রশ্ন</h2>
+    <!-- FAQ সেকশন -->
+    <div class="rm-section rm-faq">
+        <h2 class="rm-headline">সচরাচর জিজ্ঞাসিত প্রশ্ন</h2>
         
         <details>
             <summary>প্রোডাক্টের কোয়ালিটি কেমন হবে?</summary>
-            <p>আমরা সব সময় ১০০% অরিজিনাল এবং প্রিমিয়াম কোয়ালিটির প্রোডাক্ট ইমপোর্ট করে ডেলিভারি দিয়ে থাকি।</p>
+            <p>আমরা সব সময় ১০০% অরিজিনাল এবং প্রিমিয়াম কোয়ালিটির প্রোডাক্ট ডেলিভারি দিয়ে থাকি। ছবির সাথে বাস্তবের হুবহু মিল পাবেন।</p>
         </details>
         <details>
             <summary>ডেলিভারি চার্জ কত?</summary>
@@ -261,21 +264,21 @@
         </details>
         <details>
             <summary>অর্ডার করার কতদিনের মধ্যে পাবো?</summary>
-            <p>অর্ডার কনফার্ম করার পর ঢাকার ভেতর ২৪-৪৮ ঘন্টা এবং ঢাকার বাইরে ২-৩ দিনের মধ্যে হোম ডেলিভারি পাবেন।</p>
+            <p>অর্ডার কনফার্ম করার পর ঢাকার ভেতর ২৪-৪৮ ঘণ্টা এবং ঢাকার বাইরে ২-৩ দিনের মধ্যে হোম ডেলিভারি পাবেন।</p>
         </details>
     </div>
 
     <!-- অর্ডার ফর্ম -->
-    <div class="rm-checkout-area" id="order-form">
-        <h2 style="color: #EA580C;">অর্ডার করতে আপনার তথ্য দিন</h2>
-        <p style="margin-bottom: 20px;">প্রোডাক্টটি পেতে নিচের ফর্মটি সঠিক তথ্য দিয়ে পূরণ করুন</p>
+    <div class="rm-form-area" id="order-section">
+        <h2 style="color: var(--secondary); text-align: center; font-size: 26px; margin-bottom: 10px;">অর্ডার করতে আপনার তথ্য দিন</h2>
+        <p style="text-align: center; margin-bottom: 25px; font-weight: 600;">প্রোডাক্টটি পেতে নিচের ফর্মটি সঠিক তথ্য দিয়ে পূরণ করুন</p>
         
         <form action="#" method="POST">
-            <input type="text" class="rm-input-field" placeholder="আপনার সম্পূর্ণ নাম" required>
-            <input type="tel" class="rm-input-field" placeholder="আপনার মোবাইল নাম্বার" required>
-            <textarea class="rm-input-field" rows="3" placeholder="আপনার সম্পূর্ণ ঠিকানা (গ্রাম/মহল্লা, থানা, জেলা)" required></textarea>
+            <input type="text" class="rm-input" placeholder="আপনার সম্পূর্ণ নাম লিখুন" required>
+            <input type="tel" class="rm-input" placeholder="আপনার মোবাইল নাম্বার লিখুন" required>
+            <textarea class="rm-input" rows="4" placeholder="আপনার সম্পূর্ণ ঠিকানা (গ্রাম/মহল্লা, থানা, জেলা) লিখুন" required></textarea>
             
-            <button type="submit" class="rm-action-btn" style="width: 90%; margin-top: 15px;">✅ কনফার্ম অর্ডার</button>
+            <button type="submit" class="rm-action-btn" style="width: 100%; border-radius: 8px;">✅ কনফার্ম অর্ডার</button>
         </form>
     </div>
 

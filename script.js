@@ -197,7 +197,9 @@ function initOrderForm() {
 
         // ফর্ম ডাটা সংগ্রহ
         const requestBody = new FormData(form);
-
+requestBody.append("package", form.quantity.value);
+requestBody.append("product", PRODUCT.name);
+requestBody.append("price", PRODUCT.price);
         // Fetch API ব্যবহার করে ডাটা পাঠানো
         fetch(GOOGLE_SCRIPT_URL, { 
             method: 'POST', 

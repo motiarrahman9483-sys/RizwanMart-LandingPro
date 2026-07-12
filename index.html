@@ -1,145 +1,182 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Rizwan Mart | Premium Shopping</title>
-    <meta name="description" content="Order premium quality products with Cash On Delivery all over Bangladesh.">
-    
-    <link rel="icon" href="assets/images/favicon.png" type="image/png">
+    <!-- ==========================================
+    [ওয়েবসাইটের নাম ও এসইও (SEO) এর জায়গা শুরু]
+    নিচের 'title' এর ভেতরে আপনার ওয়েবসাইটের নাম দিন। 
+    'content' এর ভেতরে ওয়েবসাইটের ডেসক্রিপশন দিন।
+    =========================================== -->
+    <title>Rizwan Mart | Premium Product</title>
+    <meta name="description" content="বেস্ট কোয়ালিটি প্রোডাক্ট কিনুন আকর্ষণীয় অফারে।">
+    <!-- [ওয়েবসাইটের নাম ও এসইও এর জায়গা শেষ] -->
 
     <link rel="stylesheet" href="style.css">
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <style>
-        .main-image-container img {
-            width: 100%;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-            transition: 0.3s ease-in-out;
-        }
-
-        .thumbnail-container {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .thumb {
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
-            border-radius: 8px;
-            cursor: pointer;
-            border: 2px solid #ddd;
-            transition: 0.3s;
-        }
-
-        .thumb:hover, .thumb.active {
-            border: 2px solid #ff4757;
-            transform: scale(1.05);
-        }
-    </style>
+    <!-- ফন্ট ডিজাইন -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
+    <!-- ==========================================
+    [হেডার ও লোগো বসানোর জায়গা শুরু]
+    এখানে আপনার দোকানের নাম বা লোগোর লিংক বসাবেন।
+    =========================================== -->
     <header class="top-bar">
         <div class="container">
             <div class="logo">
                 <h2>Rizwan Mart</h2>
+                <!-- ছবি হিসেবে লোগো দিতে চাইলে উপরের h2 লাইনটা কেটে নিচের লাইনটা ব্যবহার করবেন -->
+                <!-- <img src="আপনার-লোগোর-লিংক.png" alt="Logo"> -->
             </div>
             <div class="top-right">
                 <span>🚚 সারা দেশে ক্যাশ অন ডেলিভারি!</span>
             </div>
         </div>
     </header>
+    <!-- [হেডার ও লোগো বসানোর জায়গা শেষ] -->
 
+
+    <!-- ==========================================
+    [মেইন প্রোডাক্ট, ছবি এবং দাম বসানোর জায়গা শুরু]
+    =========================================== -->
     <section class="hero">
         <div class="container hero-grid">
             
+            <!-- (১) বাম পাশ: প্রোডাক্টের নাম ও দাম -->
             <div class="hero-left">
-                <span class="offer">🔥 লিমিটেড টাইম অফার - স্টক ফুরিয়ে যাওয়ার আগেই অর্ডার করুন!</span>
+                <span class="offer">🔥 স্টক সীমিত - আজই অর্ডার করুন!</span>
                 
-                <h1 id="productName">Loading...</h1>
-                <p id="productShort">Please wait, loading product details.</p>
+                <!-- প্রোডাক্টের নাম এখানে বসান -->
+                <h1 id="productName">Premium Ultra Smartwatch</h1>
+                
+                <!-- শর্ট ডেসক্রিপশন এখানে বসান -->
+                <p id="productShort">স্টাইলিশ ডিজাইন এবং আকর্ষণীয় ফিচার। স্পেশাল ডিসকাউন্ট চলছে!</p>
                 
                 <div class="price-box">
-                    <h2>৳ <span id="price">...</span></h2>
-                    <del>৳ <span id="oldPrice">...</span></del>
-                    <span class="discount">38% OFF</span> 
+                    <!-- বর্তমান দাম এবং আগের দাম এখানে বসান -->
+                    <h2>৳ <span id="price">১,৫০০</span></h2>
+                    <del>৳ <span id="oldPrice">২,৫০০</span></del>
+                    <span class="discount">৪০% ছাড়</span> 
                 </div>
                 
-                <button class="buy-btn">অর্ডার করুন</button>
+                <a href="#order" class="buy-btn">অর্ডার করুন</a>
             </div>
             
+            <!-- (২) ডান পাশ: প্রোডাক্টের ছবিগুলো -->
             <div class="hero-right">
+                
+                <!-- মেইন বড় ছবি: src=" " এর ভেতরে আপনার বড় ছবির লিংক বসাবেন -->
                 <div class="main-image-container">
-                    <img id="mainImage" src="assets/images/product1.jpg" alt="Premium Product" loading="lazy">
+                    <img id="mainImage" src="assets/images/main-product.jpg" alt="Main Product">
                 </div>
 
+                <!-- ছোট ছবি (থাম্বনেইল): src=" " এর ভেতরে ছোট ছবিগুলোর লিংক বসাবেন -->
                 <div class="thumbnail-container">
-                    <img src="assets/images/product1.jpg" class="thumb active" onclick="changeImage(this.src, this)" alt="Thumb 1">
+                    <img src="assets/images/main-product.jpg" class="thumb active" onclick="changeImage(this.src, this)" alt="Thumb 1">
                     <img src="assets/images/product2.jpg" class="thumb" onclick="changeImage(this.src, this)" alt="Thumb 2">
                     <img src="assets/images/product3.jpg" class="thumb" onclick="changeImage(this.src, this)" alt="Thumb 3">
-                    <img src="assets/images/product4.jpg" class="thumb" onclick="changeImage(this.src, this)" alt="Thumb 4">
                 </div>
             </div>
 
         </div>
     </section>
+    <!-- [মেইন প্রোডাক্ট, ছবি এবং দাম বসানোর জায়গা শেষ] -->
 
+
+    <!-- ==========================================
+    [প্রোডাক্টের ভিডিও বসানোর জায়গা শুরু (ঐচ্ছিক)]
+    আপনার ইউটিউব বা অন্য কোনো ভিডিও থাকলে এখানে লিংক বসাবেন। 
+    না থাকলে এই পুরো সেকশনটা ডিলিট করে দিতে পারেন।
+    =========================================== -->
+    <section class="video-section">
+        <div class="container" style="text-align: center;">
+            <h2>প্রোডাক্টের লাইভ ভিডিও দেখুন</h2>
+            <!-- src=" " এর ভেতরে ভিডিওর লিংক বসান -->
+            <iframe width="100%" height="400" src="https://www.youtube.com/embed/আপনার-ভিডিওর-কোড" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+    <!-- [প্রোডাক্টের ভিডিও বসানোর জায়গা শেষ] -->
+
+
+    <!-- ==========================================
+    [প্রোডাক্টের ফিচার/গুণাগুণ বসানোর জায়গা শুরু]
+    এখানে আপনার প্রোডাক্টের ভালো দিকগুলো পয়েন্ট করে লিখবেন।
+    =========================================== -->
     <section class="features">
         <div class="container">
-            <h2>Why Choose This Product?</h2>
-            <div class="feature-grid"></div>
+            <h2>প্রোডাক্টটি কেন কিনবেন?</h2>
+            <div class="feature-grid">
+                
+                <!-- ফিচার ১ -->
+                <div class="feature-item">
+                    <h3>🔋 লং লাস্টিং ব্যাটারি</h3>
+                    <p>একবার চার্জ দিলে একটানা ৭ দিন চলবে।</p>
+                </div>
+                
+                <!-- ফিচার ২ -->
+                <div class="feature-item">
+                    <h3>💧 ওয়াটারপ্রুফ</h3>
+                    <p>বৃষ্টিতে ভিজলে বা পানি লাগলে কোনো সমস্যা নেই।</p>
+                </div>
+
+            </div>
         </div>
     </section>
+    <!-- [প্রোডাক্টের ফিচার/গুণাগুণ বসানোর জায়গা শেষ] -->
 
-    <section class="packages">
-        <div class="container">
-            <h2>Choose Package</h2>
-            <div class="package-grid"></div>
-        </div>
-    </section>
 
-    <section class="reviews">
-        <div class="container"></div>
-    </section>
-
-    <section class="faq">
-        <div class="container"></div>
-    </section>
-
+    <!-- ==========================================
+    [অর্ডার ফর্ম বসানোর জায়গা শুরু]
+    কাস্টমার তথ্য দিয়ে অর্ডার করলে এই ফর্মটি কাজ করবে।
+    =========================================== -->
     <section id="order">
         <div class="container">
-            <h2>Order Now</h2>
+            <h2>অর্ডার কনফার্ম করতে ফর্মটি পূরণ করুন</h2>
+            
             <form id="orderForm">
-                <input type="text" name="name" placeholder="আপনার নাম" required>
+                <!-- কাস্টমারের নাম -->
+                <input type="text" name="name" placeholder="আপনার নাম (যেমন: Hashi Akter)" required>
+                
+                <!-- কাস্টমারের নাম্বার -->
                 <input type="tel" name="phone" placeholder="মোবাইল নাম্বার" required>
+                
+                <!-- কাস্টমারের ঠিকানা -->
                 <textarea name="address" placeholder="সম্পূর্ণ ঠিকানা" required></textarea>
+                
+                <!-- প্রোডাক্টের পরিমাণ -->
                 <select name="quantity">
                     <option value="১ পিস">১ পিস</option>
                     <option value="২ পিস">২ পিস</option>
-                    <option value="৩ পিস">৩ পিস</option>
                 </select>
+                
                 <button type="submit">অর্ডার কনফার্ম করুন</button>
             </form>
         </div>
     </section>
+    <!-- [অর্ডার ফর্ম বসানোর জায়গা শেষ] -->
 
+
+    <!-- ==========================================
+    [ফুটার এবং হোয়াটসঅ্যাপ বাটন শুরু]
+    =========================================== -->
     <footer>
         <div class="container">
-            <p>© 2026 Rizwan Mart | All Rights Reserved</p>
+            <p>© 2026 Rizwan Mart | All Rights Reserved.</p>
         </div>
     </footer>
 
+    <!-- হোয়াটসঅ্যাপ চ্যাট বাটন (href এর ভেতরে আপনার হোয়াটসঅ্যাপ নাম্বার দিন) -->
+    <a href="https://wa.me/88017XXXXXXXX" class="whatsapp-float" target="_blank" style="position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white; padding: 15px; border-radius: 50px; text-decoration: none; font-weight: bold;">
+        💬 WhatsApp-এ কথা বলুন
+    </a>
+    <!-- [ফুটার এবং হোয়াটসঅ্যাপ বাটন শেষ] -->
+
+    
+    <!-- স্ক্রিপ্ট ফাইল -->
     <script src="config.js"></script>
     <script src="script.js"></script>
 

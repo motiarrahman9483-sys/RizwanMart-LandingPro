@@ -3,274 +3,362 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rizwan Mart - Premium Store</title>
-    <!-- ফন্ট পরিবর্তন করা হয়েছে যাতে বাংলা সংখ্যা এবং অক্ষর একদম ক্লিয়ার ও সুন্দর দেখায় -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* ==========================================================
-           🎨🎨 থিমের কালার চেঞ্জ করার অপশন (এখান থেকে রং বদলাবেন) 🎨🎨
-           ========================================================== */
-        :root {
-            --primary: #1E3A8A; /* গাঢ় নীল (হেডার এবং মূল লেখার কালার) */
-            --secondary: #EA580C; /* উজ্জ্বল কমলা (বাটন এবং অফারের কালার) */
-            --bg-color: #F3F4F6; /* ব্যাকগ্রাউন্ড কালার */
-            --text-color: #0F172A; /* লেখার রঙ - সাদাকালো নয়, বরং গাঢ় নীলচে কালো */
-            --white: #FFFFFF;
-            --accent-green: #16A34A; /* টিকচিহ্ন ও ডিসকাউন্ট প্রাইসের কালার */
-        }
+    <title>Rizwan Mart - Premium Offer</title>
+    
+    <!-- গুগল ফন্ট লিংক (বড়, স্পষ্ট এবং আকর্ষণীয় লেখার জন্য) -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 
+    <style>
+        /* =========================================================================
+           ১. কালার এবং ফন্ট কন্ট্রোল সেকশন (এখান থেকে ব্যাকগ্রাউন্ড কালার চেঞ্জ করতে পারবেন)
+           ========================================================================= */
         body {
-            font-family: 'Noto Sans Bengali', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            background: linear-gradient(to right, #FFF3E0, #E0F7FA); /* হালকা কমলা ও নীল ব্যাকগ্রাউন্ড */
+            font-family: 'Hind Siliguri', 'Poppins', sans-serif;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #FFFDE7; /* মূল কন্টেইনারের হালকা হলুদ ব্যাকগ্রাউন্ড */
+            box-shadow: 0px 0px 20px rgba(0, 0, 100, 0.1);
+            padding-bottom: 30px;
+        }
+
+        /* লেখার কালার এবং সাইজ (সাদা-কালো একদম বাদ দেওয়া হয়েছে) */
+        h1, h2, h3, p, label {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* প্রধান হেডলাইন (গাঢ় লাল) */
+        .main-headline {
+            color: #D50000;
+            font-size: 38px;
+            font-weight: 700;
+            text-align: center;
+            padding: 20px 10px;
+            line-height: 1.4;
+            text-shadow: 2px 2px 4px rgba(255, 0, 0, 0.1);
+        }
+
+        /* সাব-হেডলাইন (গাঢ় নীল) */
+        .sub-headline {
+            color: #01579B;
+            font-size: 26px;
+            font-weight: 600;
+            text-align: center;
+            padding: 10px 15px;
+            line-height: 1.5;
+        }
+
+        /* প্যারাগ্রাফ বা বর্ণনার লেখা (গাঢ় সবুজ) */
+        .description-text {
+            color: #1B5E20;
+            font-size: 22px;
+            font-weight: 600;
+            text-align: center;
+            padding: 15px;
             line-height: 1.6;
-            font-size: 18px; /* সব লেখা আগের চেয়ে বড় করা হয়েছে */
-        }
-        h1, h2, h3 { margin-top: 0; line-height: 1.4; }
-        a { text-decoration: none; }
-        
-        .rm-container {
-            max-width: 700px;
-            margin: 0 auto;
-            background: var(--white);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            overflow: hidden;
         }
 
-        /* ==========================================================
-           🏵️🏵️ লোগো এবং হেডার সেকশন 🏵️🏵️
-           ========================================================== */
-        .rm-header {
-            background: var(--primary);
-            color: var(--white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            padding: 20px 15px;
-            border-bottom: 6px solid var(--secondary);
+        /* =========================================================================
+           ২. হেডার এবং লোগো ডিজাইন
+           ========================================================================= */
+        .header {
+            background: linear-gradient(90deg, #1A237E, #311B92); /* গাঢ় নীল থেকে বেগুনি */
+            padding: 25px 0;
+            text-align: center;
+            border-bottom: 5px solid #FFD600;
         }
-        .rm-logo {
-            width: 75px; height: 75px;
-            border-radius: 50%;
-            border: 4px solid var(--secondary);
-            object-fit: cover;
-            box-shadow: 0 0 12px rgba(255,255,255,0.6);
-        }
-        .rm-header-text { font-size: 32px; font-weight: 700; }
-
-        .rm-section { padding: 25px 20px; text-align: center; }
-        .rm-headline { font-size: 28px; color: var(--primary); font-weight: 700; margin-bottom: 20px; }
-        
-        .product-img { width: 100%; height: auto; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        
-        .rm-offer-box {
-            background: #FFF7ED;
-            border: 3px dashed var(--secondary);
-            padding: 25px;
-            border-radius: 12px;
-            margin: 25px 0;
-        }
-        .rm-regular-price { text-decoration: line-through; color: #EF4444; font-size: 24px; font-weight: 700; }
-        .rm-discount-price { font-size: 36px; font-weight: 700; color: var(--accent-green); margin: 10px 0; }
-
-        /* ==========================================================
-           🔴🔴 এনিমেটেড বাটন স্টাইল 🔴🔴
-           ========================================================== */
-        .btn-wrapper { text-align: center; width: 100%; margin: 20px 0; }
-        .rm-action-btn {
-            display: inline-block;
-            background: var(--secondary);
-            color: var(--white);
-            padding: 18px 40px;
-            font-size: 24px;
-            font-weight: 700;
-            border-radius: 50px;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(234, 88, 12, 0.4);
-            animation: pulse-animation 2s infinite;
-            width: 90%;
-            max-width: 350px;
-        }
-        @keyframes pulse-animation {
-            0% { box-shadow: 0 0 0 0 rgba(234, 88, 12, 0.8); }
-            70% { box-shadow: 0 0 0 20px rgba(234, 88, 12, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(234, 88, 12, 0); }
+        .header h1 {
+            color: #FFFF00; /* হলুদ রঙের লোগো টেক্সট */
+            font-size: 45px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-family: 'Poppins', sans-serif;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
         }
 
-        .rm-video-wrapper { padding: 10px; border: 4px solid var(--primary); border-radius: 12px; margin: 20px 0; }
-        .rm-video-wrapper video { width: 100%; border-radius: 8px; outline: none; }
-
-        .rm-colorful-list { text-align: left; margin: 25px 0; }
-        .rm-colorful-list ul { list-style: none; padding: 0; }
-        .rm-colorful-list li {
-            background: #E0E7FF;
-            border-left: 6px solid var(--primary);
-            margin: 15px 0;
-            padding: 18px;
-            border-radius: 8px;
-            display: flex;
-            align-items: flex-start;
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--primary);
+        /* =========================================================================
+           ৩. ছবি এবং ভিডিওর সাইজ ডিজাইন
+           ========================================================================= */
+        .image-box {
+            text-align: center;
+            padding: 20px;
         }
-        .rm-check-icon {
-            background: var(--secondary);
-            color: var(--white);
-            border-radius: 50%;
-            width: 30px; height: 30px;
-            display: inline-flex; justify-content: center; align-items: center;
-            margin-right: 15px; font-size: 18px; flex-shrink: 0; margin-top: 2px;
-        }
-
-        .rm-detail-block { background: #FEF3C7; padding: 25px; border-radius: 10px; margin-bottom: 25px; border: 2px solid #F59E0B; }
-        .rm-detail-block h3 { color: var(--secondary); font-size: 26px; font-weight: 700; }
-        .rm-detail-block p { font-size: 20px; font-weight: 600; color: #92400E; margin-top: 10px; }
-
-        /* ==========================================================
-           ⭐⭐ কাস্টমার রিভিউ স্লাইডার (ছবিগুলো সমান হবে) ⭐⭐
-           ========================================================== */
-        .rm-slider-container {
-            position: relative;
+        .image-box img {
             width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
-            overflow: hidden;
-            border: 4px solid var(--primary);
-            border-radius: 12px;
+            max-width: 700px;
+            border: 6px solid #FF6D00; /* কমলা রঙের বর্ডার */
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(255, 109, 0, 0.3);
         }
-        .rm-slider-track {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-            align-items: center;
+
+        .video-box {
+            text-align: center;
+            padding: 20px;
         }
-        .rm-slide {
-            min-width: 100%;
-            display: flex;
-            justify-content: center;
+        .video-box iframe {
+            width: 100%;
+            max-width: 700px;
+            height: 400px;
+            border: 6px solid #00C853; /* সবুজ বর্ডার */
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 200, 83, 0.3);
         }
-        .rm-slide img {
-            width: 100%; /* কন্টেইনার অনুযায়ী ফিট হবে */
-            object-fit: cover;
-            display: block;
+
+        /* =========================================================================
+           ৪. মূল্য বা প্রাইস সেকশন ডিজাইন
+           ========================================================================= */
+        .price-section {
+            background-color: #FCE4EC; /* হালকা গোলাপি */
+            margin: 20px;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            border: 3px dashed #C51162;
         }
-        .slider-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: var(--secondary);
-            color: var(--white);
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            font-size: 24px;
+        .old-price {
+            font-size: 28px;
+            color: #B71C1C; /* গাঢ় লাল */
+            text-decoration: line-through;
+            font-weight: 700;
+        }
+        .new-price {
+            font-size: 38px;
+            color: #00C853; /* উজ্জ্বল সবুজ */
+            font-weight: 700;
+            margin-top: 10px;
+        }
+
+        /* =========================================================================
+           ৫. অর্ডার বাটন (অ্যানিমেশন সহ)
+           ========================================================================= */
+        .order-btn-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .order-btn {
+            background: linear-gradient(45deg, #D50000, #FF6D00);
+            color: #FFFF00; /* হলুদ টেক্সট */
+            font-size: 30px;
+            font-weight: 700;
+            padding: 18px 45px;
+            border: 4px solid #FFFF00;
+            border-radius: 50px;
             cursor: pointer;
-            z-index: 10;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 8px 20px rgba(213, 0, 0, 0.4);
+            animation: pulse 1.5s infinite; /* বাটন কাঁপানোর অ্যানিমেশন */
         }
-        .prev-btn { left: 10px; }
-        .next-btn { right: 10px; }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
 
-        .rm-faq details { background: #E0F2FE; margin-bottom: 15px; border-radius: 10px; text-align: left; border: 2px solid #38BDF8; }
-        .rm-faq summary { font-weight: 700; font-size: 22px; padding: 18px; cursor: pointer; color: var(--primary); }
-        .rm-faq p { padding: 15px 18px; margin: 0; font-size: 20px; font-weight: 600; color: #0369A1; background: #F0F9FF; }
+        /* =========================================================================
+           ৬. অর্ডার ফর্ম ডিজাইন (গ্রাহকের তথ্য নেওয়ার জন্য)
+           ========================================================================= */
+        .form-section {
+            background-color: #E3F2FD; /* হালকা নীল */
+            margin: 30px 20px;
+            padding: 30px;
+            border-radius: 15px;
+            border: 4px solid #0277BD;
+        }
+        .form-title {
+            color: #C51162;
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+        .input-group {
+            margin-bottom: 20px;
+        }
+        .input-group label {
+            display: block;
+            font-size: 22px;
+            color: #004D40; /* গাঢ় সবুজ/নীল */
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .input-group input, .input-group textarea, .input-group select {
+            width: 100%;
+            padding: 15px;
+            font-size: 20px;
+            color: #1A237E; /* লেখার কালার গাঢ় নীল */
+            border: 3px solid #0288D1;
+            border-radius: 8px;
+            background-color: #FFFDE7;
+            box-sizing: border-box;
+            font-weight: 600;
+        }
+        .input-group input:focus, .input-group textarea:focus {
+            border-color: #D50000;
+            outline: none;
+        }
+        .submit-btn {
+            width: 100%;
+            background-color: #2E7D32;
+            color: #FFFF00;
+            font-size: 30px;
+            font-weight: 700;
+            padding: 18px;
+            border: 4px solid #FFFF00;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(46, 125, 50, 0.4);
+        }
 
-        .rm-form-area { background: #FFF7ED; padding: 40px 20px; border-top: 6px solid var(--secondary); text-align: center; }
-        .rm-input { width: 100%; padding: 18px; margin-bottom: 20px; border: 2px solid var(--primary); border-radius: 10px; font-family: inherit; font-size: 20px; font-weight: 600; box-sizing: border-box; }
-        
-        .rm-footer { background: var(--primary); color: var(--white); text-align: center; padding: 25px; font-size: 18px; font-weight: 600; }
+        /* মোবাইল স্ক্রিনের জন্য ফন্ট সাইজ ঠিক করা */
+        @media (max-width: 600px) {
+            .main-headline { font-size: 30px; }
+            .sub-headline { font-size: 22px; }
+            .description-text { font-size: 18px; }
+            .video-box iframe { height: 250px; }
+            .order-btn { font-size: 24px; padding: 15px 30px; }
+            .submit-btn { font-size: 24px; }
+        }
     </style>
 </head>
 <body>
 
-<div class="rm-container">
-    <div class="rm-header">
-        <img src="https://via.placeholder.com/150x150?text=Logo" alt="Rizwan Mart Logo" class="rm-logo">
-        <span class="rm-header-text">Rizwan Mart</span>
-    </div>
+    <div class="container">
 
-    <div class="rm-section">
-        <h1 class="rm-headline">আপনার দৈনন্দিন কাজকে আরও সহজ ও স্মার্ট করতে নিয়ে এলাম প্রিমিয়াম এই গ্যাজেটটি!</h1>
-        <img src="https://via.placeholder.com/800x800?text=Product+Main+Image+1" alt="প্রোডাক্ট ১" class="product-img">
-        
-        <div class="rm-offer-box">
-            <h2 style="color: var(--secondary); font-size: 30px;">🔥 আজকের স্পেশাল অফার! 🔥</h2>
-            <p class="rm-regular-price">রেগুলার প্রাইস: ৩০০০৳</p>
-            <p class="rm-discount-price">আজকের অফার: ১১৯৯৳</p>
+        <!-- =========================================================
+           ১. হেডার সেকশন (এখানে আপনার শপের নাম আছে)
+           ========================================================= -->
+        <div class="header">
+            <h1>Rizwan Mart</h1>
         </div>
 
-        <div class="btn-wrapper">
-            <a href="#order-section" class="rm-action-btn">অর্ডার করতে চাই</a>
-        </div>
-    </div>
+        <!-- =========================================================
+           ২. প্রধান আকর্ষণ বা হেডলাইন সেকশন (বাংলায় বড় টেক্সট)
+           ========================================================= -->
+        <h1 class="main-headline">
+            অবিশ্বাস্য অফার! আপনার দৈনন্দিন জীবনকে আরও সহজ করতে আমরা নিয়ে এসেছি বাজারের সেরা প্রোডাক্ট!
+        </h1>
+        <p class="sub-headline">
+            ১০০% অরিজিনাল কোয়ালিটি গ্যারান্টি, সারা বাংলাদেশে ক্যাশ অন ডেলিভারি সুবিধা।
+        </p>
 
-    <div class="rm-section">
-        <h2 class="rm-headline">কেন এই প্রোডাক্টটি আপনার জন্য সেরা?</h2>
-        <img src="https://via.placeholder.com/800x800?text=Product+Detail+Image+2" alt="প্রোডাক্ট ২" class="product-img">
-        <div class="rm-detail-block">
-            <h3>১০০% প্রিমিয়াম কোয়ালিটি</h3>
-            <p>অত্যন্ত নিখুঁত ফিনিশিং এবং উন্নত ম্যাটেরিয়াল দিয়ে তৈরি, যা দীর্ঘদিন ব্যবহারেও নতুনের মতোই থাকবে।</p>
+        <!-- =========================================================
+           ৩. প্রথম ছবির সেকশন (image 1.jpg বসানো হয়েছে)
+           ========================================================= -->
+        <div class="image-box">
+            <!-- এখানে আপনার মেইন ছবিটি "image 1.jpg" নামে ফোল্ডারে রাখলেই হবে -->
+            <img src="image 1.jpg" alt="Product Image 1">
         </div>
-    </div>
 
-    <div class="rm-section">
-        <h2 class="rm-headline">বিস্তারিত জানতে ভিডিওটি দেখুন</h2>
-        <div class="rm-video-wrapper">
-            <video controls><source src="your-video-link.mp4" type="video/mp4"></video>
+        <!-- =========================================================
+           ৪. প্রথম অর্ডার বাটন 
+           ========================================================= -->
+        <div class="order-btn-container">
+            <a href="#order-form" class="order-btn">অর্ডার করতে এখানে ক্লিক করুন</a>
         </div>
-        <div class="btn-wrapper">
-            <a href="#order-section" class="rm-action-btn">অর্ডার করতে চাই</a>
-        </div>
-    </div>
 
-    <div class="rm-section">
-        <h2 class="rm-headline">আমাদের কাস্টমারদের রিভিউ</h2>
-        <div class="rm-slider-container">
-            <div class="rm-slider-track" id="reviewSlider">
-                <div class="rm-slide"><img src="https://via.placeholder.com/600x400?text=Review+1" alt="Review 1"></div>
-                <div class="rm-slide"><img src="https://via.placeholder.com/600x400?text=Review+2" alt="Review 2"></div>
-                <div class="rm-slide"><img src="https://via.placeholder.com/600x400?text=Review+3" alt="Review 3"></div>
-            </div>
-            <button class="slider-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
-            <button class="slider-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
-        </div>
-        <div class="btn-wrapper" style="margin-top: 30px;">
-            <a href="#order-section" class="rm-action-btn">অর্ডার করতে চাই</a>
-        </div>
-    </div>
+        <!-- =========================================================
+           ৫. প্রোডাক্টের বিস্তারিত বর্ণনা (কালারফুল টেক্সট)
+           ========================================================= -->
+        <p class="description-text">
+            এই প্রোডাক্টটি কেন কিনবেন? কারণ এটি মজবুত, দীর্ঘস্থায়ী এবং ব্যবহারে অত্যন্ত সহজ। 
+            আমরা দিচ্ছি ৭ দিনের রিপ্লেসমেন্ট গ্যারান্টি। কোনো সমস্যা থাকলে আমরা পরিবর্তন করে দেব!
+        </p>
 
-    <div class="rm-form-area" id="order-section">
-        <h2 style="color: var(--primary); font-size: 32px; margin-bottom: 15px;">অর্ডার করতে আপনার তথ্য দিন</h2>
-        <form action="#" method="POST">
-            <input type="text" class="rm-input" placeholder="আপনার সম্পূর্ণ নাম লিখুন" required>
-            <input type="tel" class="rm-input" placeholder="আপনার মোবাইল নাম্বার লিখুন" required>
-            <textarea class="rm-input" rows="4" placeholder="আপনার সম্পূর্ণ ঠিকানা লিখুন" required></textarea>
+        <!-- =========================================================
+           ৬. দ্বিতীয় ছবির সেকশন (image 2.jpg বসানো হয়েছে)
+           ========================================================= -->
+        <div class="image-box">
+            <!-- এখানে দ্বিতীয় ছবিটি "image 2.jpg" নামে রাখবেন -->
+            <img src="image 2.jpg" alt="Product Image 2">
+        </div>
+
+        <!-- =========================================================
+           ৭. মূল্য বা প্রাইস সেকশন (বড় অঙ্কের কালারফুল ফন্ট)
+           ========================================================= -->
+        <div class="price-section">
+            <div class="old-price">রেগুলার প্রাইস: ১৫০০ টাকা</div>
+            <div class="new-price">আজকের অফার প্রাইস: মাত্র ৯৯০ টাকা!</div>
+        </div>
+
+        <!-- =========================================================
+           ৮. ভিডিও সেকশন (এখানে আপনার ভিডিওর লিংক বসাবেন)
+           ========================================================= -->
+        <p class="main-headline" style="font-size: 32px; color: #311B92;">
+            পণ্যটি সম্পর্কে আরও বিস্তারিত জানতে ভিডিওটি দেখুন
+        </p>
+        <div class="video-box">
+            <!-- নিচের src=" " এর ভেতরে ইউটিউব বা ফেসবুক ভিডিওর লিংকটি বসিয়ে দিন -->
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <!-- =========================================================
+           ৯. তৃতীয় ছবির সেকশন (image 3.jpg বসানো হয়েছে)
+           ========================================================= -->
+        <div class="image-box">
+            <!-- এখানে তৃতীয় ছবিটি "image 3.jpg" নামে রাখবেন -->
+            <img src="image 3.jpg" alt="Product Image 3">
+        </div>
+
+        <!-- =========================================================
+           ১০. দ্বিতীয় অর্ডার বাটন
+           ========================================================= -->
+        <div class="order-btn-container">
+            <a href="#order-form" class="order-btn">ডিসকাউন্টে কিনতে এখনই ক্লিক করুন</a>
+        </div>
+
+        <!-- =========================================================
+           ১১. অর্ডার ফর্ম সেকশন (এখানে কাস্টমার তথ্য পূরণ করবে)
+           ========================================================= -->
+        <div class="form-section" id="order-form">
+            <div class="form-title">অর্ডার কনফার্ম করতে নিচের ফর্মটি পূরণ করুন</div>
             
-            <!-- সমাধানকৃত বাটন: এটি এখন পারফেক্ট সাইজ ও মাঝখানে থাকবে -->
-            <div class="btn-wrapper">
-                <button type="submit" class="rm-action-btn" style="width: 90%;">✅ কনফার্ম অর্ডার</button>
-            </div>
-        </form>
-    </div>
+            <form action="#" method="POST">
+                
+                <div class="input-group">
+                    <label>আপনার সম্পূর্ণ নাম লিখুন:</label>
+                    <input type="text" name="name" placeholder="যেমন: মোঃ রিদওয়ান" required>
+                </div>
 
-    <div class="rm-footer">
-        <p>© 2026 Rizwan Mart. All Rights Reserved.</p>
-    </div>
-</div>
+                <div class="input-group">
+                    <label>আপনার মোবাইল নাম্বার লিখুন:</label>
+                    <input type="tel" name="phone" placeholder="যেমন: 017XXXXXXXX" required>
+                </div>
 
-<script>
-    let currentSlide = 0;
-    function moveSlide(direction) {
-        const track = document.getElementById('reviewSlider');
-        const slides = track.getElementsByClassName('rm-slide');
-        currentSlide = (currentSlide + direction + slides.length) % slides.length;
-        track.style.transform = `translateX(-${currentSlide * 100}%)`;
-    }
-</script>
+                <div class="input-group">
+                    <label>আপনার সম্পূর্ণ ঠিকানা লিখুন:</label>
+                    <textarea name="address" rows="3" placeholder="গ্রাম/রোড, থানা, জেলা" required></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label>কয়টি প্রোডাক্ট নিতে চান?</label>
+                    <select name="quantity">
+                        <option value="1">১ টি - ৯৯০ টাকা</option>
+                        <option value="2">২ টি - ১৯০০ টাকা (অতিরিক্ত ছাড়)</option>
+                        <option value="3">৩ টি - ২৭০০ টাকা (সুপার অফার)</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="submit-btn">অর্ডার নিশ্চিত করুন</button>
+
+            </form>
+        </div>
+
+        <!-- =========================================================
+           ১২. ফুটার সেকশন (নিচের অংশ)
+           ========================================================= -->
+        <div style="text-align: center; padding: 20px; color: #D50000; font-size: 20px; font-weight: 700;">
+            © 2026 Rizwan Mart. All Rights Reserved.<br>
+            <span style="color: #01579B;">হেল্পলাইন: 019XXXXXXXX</span>
+        </div>
+
+    </div>
 
 </body>
 </html>

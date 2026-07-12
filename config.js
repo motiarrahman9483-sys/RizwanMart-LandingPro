@@ -29,13 +29,13 @@ const PRODUCT = {
     // =========================
     // Images
     // =========================
-    images: [
-        "assets/images/product1.jpg",
-        "assets/images/product2.jpg",
-        "assets/images/product3.jpg",
-        "assets/images/product5.jpg"
-    ],
-
+     images: [
+    "assets/images/product1.jpg",
+    "assets/images/product2.jpg",
+    "assets/images/product3.jpg",
+    "assets/images/product4.jpg",
+    "assets/images/product5.jpg"
+],
     // =========================
     // Product Features
     // =========================
